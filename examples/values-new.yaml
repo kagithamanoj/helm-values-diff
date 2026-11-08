@@ -1,0 +1,19 @@
+replicaCount: 3
+image:
+  repository: myapp
+  tag: "1.1"
+  pullPolicy: IfNotPresent
+resources:
+  limits:
+    cpu: "1"
+    memory: 512Mi
+env:
+  - name: LOG_LEVEL
+    value: debug
+  - name: WORKERS
+    value: "4"
+  - name: FEATURE_X
+    value: "true"
+ingress:
+  enabled: true
+  className: nginx

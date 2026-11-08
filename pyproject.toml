@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "helm-values-diff"
+version = "0.1.0"
+description = "Diff two Helm values files and show what actually changes for a release."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = ["PyYAML>=6.0"]
+authors = [{ name = "Manoj Kumar Kagitha" }]
+
+[project.scripts]
+helm-values-diff = "helm_values_diff.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["helm_values_diff*"]
